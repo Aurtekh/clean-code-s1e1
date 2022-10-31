@@ -33,7 +33,7 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='todo-list-options__label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
@@ -54,6 +54,7 @@ var createNewTaskElement=function(taskString){
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
+    listItem.classList.add('todo-list-todo__edit')
     return listItem;
 }
 
@@ -85,7 +86,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("todo-list-todo__edit");
+    var containsClass=listItem.classList.contains("editmode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -99,7 +100,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("todo-list-todo__edit");
+    listItem.classList.toggle("editmode");
 };
 
 
