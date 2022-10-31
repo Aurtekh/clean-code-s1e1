@@ -152,6 +152,6 @@ ul li input[type=text] {
   width: 224px;
 }
 
-.editmode label {
+.editmode .todo-list-options__label {
   display: none;
 }
